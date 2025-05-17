@@ -1,0 +1,52 @@
+name: fitness_app
+description: "A new Flutter project."
+publish_to: "none"
+version: 0.1.0
+
+environment:
+  sdk: ^3.7.2
+
+dependencies:
+  dio: ^5.8.0+1
+  fl_chart: ^1.0.0
+  flutter:
+    sdk: flutter
+  flutter_keyboard_visibility: ^6.0.0
+  flutter_riverpod: ^2.6.1
+  go_router: ^15.1.2
+  intl: ^0.20.2
+  skeletonizer: ^1.4.3
+  url_strategy: ^0.3.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/
+    - assets/imgs/
+    - assets/imgs/icons/
+    - assets/imgs/vectors/
+    - assets/imgs/photos/
+
+  fonts:
+    - family: Manrope
+      fonts:
+        - asset: assets/fonts/manrope/manrope_extra-bold.ttf
+          weight: 800
+        - asset: assets/fonts/manrope/manrope_bold.ttf
+          weight: 700
+        - asset: assets/fonts/manrope/manrope_semi-bold.ttf
+          weight: 600
+        - asset: assets/fonts/manrope/manrope_medium.ttf
+          weight: 500
+        - asset: assets/fonts/manrope/manrope_regular.ttf
+          weight: 400
+        - asset: assets/fonts/manrope/manrope_extra-light.ttf
+          weight: 300
+        - asset: assets/fonts/manrope/manrope_light.ttf
+          weight: 200

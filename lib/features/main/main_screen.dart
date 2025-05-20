@@ -2,6 +2,7 @@ import 'package:fitness_app/core/constants/colors.dart';
 import 'package:fitness_app/core/widgets/custom_bottom_bar.dart';
 import 'package:fitness_app/core/widgets/custom_circle_progress_bar.dart';
 import 'package:fitness_app/features/main/dashboard/data/dashboard_screen_data.dart';
+import 'package:fitness_app/features/main/profile/data/profile_sreen_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:skeletonizer/skeletonizer.dart';

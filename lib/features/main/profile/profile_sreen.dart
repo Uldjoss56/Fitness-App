@@ -51,16 +51,19 @@ class _ProfileSreenState extends State<ProfileSreen> {
                       border: Border.all(width: 2, color: myWhite),
                       shape: BoxShape.circle,
                     ),
-                    child: CircleAvatar(
-                      radius: 50,
-                      child: ClipOval(
-                        child: AspectRatio(
-                          aspectRatio: 1,
-                          child: Image.asset(
-                            "assets/imgs/photos/user_profile.jpg",
-                            width: 100,
-                            height: 100,
-                            fit: BoxFit.cover,
+                    child: Hero(
+                      tag: "user_photo",
+                      child: CircleAvatar(
+                        radius: 50,
+                        child: ClipOval(
+                          child: AspectRatio(
+                            aspectRatio: 1,
+                            child: Image.asset(
+                              "assets/imgs/photos/user_profile.jpg",
+                              width: 100,
+                              height: 100,
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
                       ),
@@ -198,7 +201,8 @@ class _ProfileSreenState extends State<ProfileSreen> {
             Container(
               padding: EdgeInsets.all(20),
               child: Column(
-                children: List.generate(3, (index) {
+                children: List.generate(settingData.length, (index) {
+                  final data = settingData[index];
                   return Container(
                     padding: EdgeInsets.only(top: index == 0 ? 0 : 10),
                     child: InkWell(
@@ -213,12 +217,26 @@ class _ProfileSreenState extends State<ProfileSreen> {
                           children: [
                             Expanded(
                               child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                crossAxisAlignment: CrossAxisAlignment.end,
                                 children: [
-                                  Text(
-                                    "Intermittent Fasting",
-                                    style:
-                                        Theme.of(context).textTheme.bodyLarge,
+                                  Expanded(
+                                    child: Row(
+                                      children: [
+                                        data["leading"] as Widget,
+                                        SizedBox(width: 20),
+                                        Text(
+                                          data["label"] as String,
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .bodyLarge
+                                              ?.copyWith(fontSize: 20),
+                                        ),
+                                      ],
+                                    ),
                                   ),
+                                  Text(data["note"] as String),
                                 ],
                               ),
                             ),

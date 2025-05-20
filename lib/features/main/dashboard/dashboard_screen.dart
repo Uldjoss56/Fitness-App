@@ -25,16 +25,19 @@ class _DashboardScreenState extends State<DashboardScreen> {
             Expanded(
               child: Row(
                 children: [
-                  CircleAvatar(
-                    radius: 50,
-                    child: ClipOval(
-                      child: AspectRatio(
-                        aspectRatio: 1,
-                        child: Image.asset(
-                          "assets/imgs/photos/user_profile.jpg",
-                          width: 100,
-                          height: 100,
-                          fit: BoxFit.cover,
+                  Hero(
+                    tag: "user_photo",
+                    child: CircleAvatar(
+                      radius: 50,
+                      child: ClipOval(
+                        child: AspectRatio(
+                          aspectRatio: 1,
+                          child: Image.asset(
+                            "assets/imgs/photos/user_profile.jpg",
+                            width: 100,
+                            height: 100,
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
                     ),
@@ -69,21 +72,73 @@ class _DashboardScreenState extends State<DashboardScreen> {
               ),
               child: Row(
                 children: [
-                  ColorFiltered(
-                    colorFilter: ColorFilter.mode(myWhite, BlendMode.srcIn),
-                    child: Image.asset(
-                      "assets/imgs/icons/chat_01.png",
-                      width: 20,
-                      height: 20,
+                  InkWell(
+                    borderRadius: BorderRadius.circular(10),
+                    splashColor: Colors.transparent,
+                    onTap: () {},
+                    child: Stack(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(4.0),
+                          child: ColorFiltered(
+                            colorFilter: ColorFilter.mode(
+                              myWhite,
+                              BlendMode.srcIn,
+                            ),
+                            child: Image.asset(
+                              "assets/imgs/icons/chat_01.png",
+                              width: 20,
+                              height: 20,
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          right: 0,
+                          child: Container(
+                            width: 10,
+                            height: 10,
+                            decoration: BoxDecoration(
+                              color: myOrange,
+                              shape: BoxShape.circle,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                   SizedBox(width: 20),
-                  ColorFiltered(
-                    colorFilter: ColorFilter.mode(myWhite, BlendMode.srcIn),
-                    child: Image.asset(
-                      "assets/imgs/icons/bell_01.png",
-                      width: 20,
-                      height: 20,
+                  InkWell(
+                    borderRadius: BorderRadius.circular(10),
+                    splashColor: Colors.transparent,
+                    onTap: () {},
+                    child: Stack(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(4.0),
+                          child: ColorFiltered(
+                            colorFilter: ColorFilter.mode(
+                              myWhite,
+                              BlendMode.srcIn,
+                            ),
+                            child: Image.asset(
+                              "assets/imgs/icons/bell_01.png",
+                              width: 20,
+                              height: 20,
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          right: 0,
+                          child: Container(
+                            width: 10,
+                            height: 10,
+                            decoration: BoxDecoration(
+                              color: myOrange,
+                              shape: BoxShape.circle,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ],
